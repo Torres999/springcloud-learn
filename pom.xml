@@ -6,7 +6,7 @@
 	<groupId>com.example</groupId>
 	<artifactId>springcloud-learn</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<packaging>jar</packaging>
+	<packaging>pom</packaging>
 
 	<name>springcloud-learn</name>
 	<description>Demo project for Spring Boot</description>
@@ -17,6 +17,20 @@
 		<version>1.3.5.RELEASE</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
+
+	<modules>
+		<module>springcloud-learn-config-consume</module>
+		<module>springcloud-learn-config-server</module>
+		<module>springcloud-learn-config-server-cluster-1</module>
+		<module>springcloud-learn-config-server-cluster-2</module>
+		<module>springcloud-learn-config-server-cluster-consume</module>
+		<module>springcloud-learn-consume-1</module>
+		<module>springcloud-learn-consume-2-zuul</module>
+		<module>springcloud-learn-registercenter</module>
+		<module>springcloud-learn-service-1</module>
+		<module>springcloud-learn-service-2</module>
+		<module>springcloud-learn-service-3-zuul</module>
+	</modules>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
