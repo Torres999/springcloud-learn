@@ -43,9 +43,12 @@ public class ComputeController {
             produces = "application/json")
     public Integer add(@ApiParam(value = "计算因子a", required = true)@RequestParam Integer a,
                        @ApiParam(value = "计算因子b", required = true)@RequestParam Integer b,
-                       @RequestParam(required = false) Integer c) {
+                       @RequestParam(required = false) Integer c) throws Exception {
         ServiceInstance instance = client.getLocalServiceInstance();
         Integer r = a - b;
+        if (r != 0){
+            throw new Exception("sssssssssss");
+        }
         logger.info("/add, host:" + instance.getHost() + ", service_id:" + instance.getServiceId() + ", result:" + r);
         return r;
     }
