@@ -46,7 +46,7 @@ public class ComputeController {
                        @RequestParam(required = false) Integer c) {
         ServiceInstance instance = client.getLocalServiceInstance();
         Integer r = a - b;
-        logger.info("/add, host:" + instance.getHost() + ", service_id:" + instance.getServiceId() + ", result:" + r);
+        logger.info("/add, host:" + instance.getHost() + ":" + instance.getPort() + ", service_id:" + instance.getServiceId() + ", result:" + r);
         return r;
     }
 }
