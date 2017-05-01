@@ -30,6 +30,9 @@
 		<module>springcloud-learn-service-1</module>
 		<module>springcloud-learn-service-2</module>
 		<module>springcloud-learn-service-3-zuul</module>
+		<module>springcloud-learn-timeout-zuul</module>
+		<module>springcloud-learn-timeout-server</module>
+		<module>springcloud-learn-timeout-consume</module>
 	</modules>
 
 	<properties>
