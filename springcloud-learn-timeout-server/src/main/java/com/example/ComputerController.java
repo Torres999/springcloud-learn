@@ -17,11 +17,11 @@ public class ComputerController {
     @RequestMapping(value = "/add", method = RequestMethod.GET, produces = "application/json")
     public Integer add(@RequestParam Integer a, @RequestParam Integer b, @RequestParam(required = false) Integer c) {
         logger.info("=====Accept a request!=====");
-//        try {
-//            Thread.sleep(6000);
-//        } catch (InterruptedException e) {
-//            e.printStackTrace();
-//        }
+        try {
+            Thread.sleep(6000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
 //        配合Application中的一下命令测试：
 //        hystrix.command.default.execution.isolation.thread.timeoutInMilliseconds=2000
         Integer r = a - b;
