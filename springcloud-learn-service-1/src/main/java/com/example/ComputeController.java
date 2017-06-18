@@ -35,12 +35,8 @@ public class ComputeController {
 
 
     @ApiOperation(value = "计算两个数字的和")
-    @ApiResponses(
-        @ApiResponse(code = 200, message = "返回计算结果", response = Integer.class)
-    )
-    @RequestMapping(value = "/add",
-            method = RequestMethod.GET,
-            produces = "application/json")
+    @ApiResponses(@ApiResponse(code = 200, message = "返回计算结果", response = Integer.class))
+    @RequestMapping(value = "/add", method = RequestMethod.GET, produces = "application/json")
     public Integer add(@ApiParam(value = "计算因子a", required = true)@RequestParam Integer a,
                        @ApiParam(value = "计算因子b", required = true)@RequestParam Integer b,
                        @RequestParam(required = false) Integer c) {

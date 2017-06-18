@@ -33,6 +33,7 @@
 		<module>springcloud-learn-timeout-zuul</module>
 		<module>springcloud-learn-timeout-server</module>
 		<module>springcloud-learn-timeout-consume</module>
+		<module>springcloud-learn-hystrix-dashboard</module>
 	</modules>
 
 	<properties>
