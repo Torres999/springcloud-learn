@@ -7,6 +7,9 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.cloud.netflix.feign.EnableFeignClients;
 import org.springframework.cloud.netflix.hystrix.dashboard.EnableHystrixDashboard;
 
+/**
+ * 该module没有继承父工程，因为父工程的冲裁、springboot版本不支持HystrixDashboard
+ */
 @SpringBootApplication
 @EnableDiscoveryClient
 @EnableFeignClients
