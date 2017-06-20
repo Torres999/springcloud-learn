@@ -48,6 +48,16 @@
 			<artifactId>spring-cloud-starter-eureka</artifactId>
 		</dependency>
 
+
+		<!--熔断-监控 配合controller中的@HystrixCommand、主类上的@EnableCircuitBreaker测试Turbine-->
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-hystrix</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-actuator</artifactId>
+		</dependency>
 	</dependencies>
 
 	<build>
