@@ -35,6 +35,7 @@
 		<module>springcloud-learn-timeout-consume</module>
 		<module>springcloud-learn-hystrix-dashboard</module>
 		<module>springcloud-learn-hystrix-dashboard-turbine</module>
+		<module>springcloud-learn-redis</module>
 	</modules>
 
 	<properties>
