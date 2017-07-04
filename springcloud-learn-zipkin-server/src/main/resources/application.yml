@@ -1,0 +1,21 @@
+##存储配置
+##zipkin的存储包括mysql、es、cassadra。如果不配置存储的话，默认是在内存中的。如果在内存中的话，当重启应用后，数据就会丢失了。
+#
+##mysql存储
+#spring:
+#  datasource:
+#    schema: classpath:/mysql.sql #mysql的脚本在zipkin包里已经提供了，只需要执行一下就可以了。
+#    url: jdbc:mysql://localhost:3306/lilinlin
+#    driverClassName: com.mysql.jdbc.Driver
+#    username: lilinlin
+#    password: lilinlin
+#    # Switch this on to create the schema on startup:
+#    initialize: true
+#    continueOnError: true
+#  sleuth:
+#    enabled: false
+#
+## default is mem (in-memory)
+#zipkin:
+#  storage:
+#    type: mysql
