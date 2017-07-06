@@ -13,8 +13,8 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @EnableDiscoveryClient
 @SpringBootApplication
-public class SpringcloudLearnZipkinServiceApplication {
-    Logger logger = LoggerFactory.getLogger(SpringcloudLearnZipkinServiceApplication.class);
+public class ZipkinServiceApplication {
+    Logger logger = LoggerFactory.getLogger(ZipkinServiceApplication.class);
 
     @Bean
     public AlwaysSampler defaultSampler() {
@@ -23,7 +23,7 @@ public class SpringcloudLearnZipkinServiceApplication {
 
 
     public static void main(String[] args) {
-        SpringApplication.run(SpringcloudLearnZipkinServiceApplication.class, args);
+        SpringApplication.run(ZipkinServiceApplication.class, args);
     }
 
     @RequestMapping(value = "/zipkinService")

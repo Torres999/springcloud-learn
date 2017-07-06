@@ -8,9 +8,9 @@ import zipkin.server.EnableZipkinServer;
 @EnableDiscoveryClient
 @EnableZipkinServer
 @SpringBootApplication
-public class SpringcloudLearnZipkinServerApplication {
+public class ZipkinServerApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(SpringcloudLearnZipkinServerApplication.class, args);
+		SpringApplication.run(ZipkinServerApplication.class, args);
 	}
 }

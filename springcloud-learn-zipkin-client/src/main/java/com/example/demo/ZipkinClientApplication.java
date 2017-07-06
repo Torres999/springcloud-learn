@@ -12,7 +12,7 @@ import org.springframework.web.client.RestTemplate;
 @EnableDiscoveryClient
 @EnableFeignClients
 @SpringBootApplication
-public class SpringcloudLearnZipkinClientApplication {
+public class ZipkinClientApplication {
     @Bean
     public RestTemplate restTemplate() {
         return new RestTemplate();
@@ -24,6 +24,6 @@ public class SpringcloudLearnZipkinClientApplication {
     }
 
     public static void main(String[] args) {
-        SpringApplication.run(SpringcloudLearnZipkinClientApplication.class, args);
+        SpringApplication.run(ZipkinClientApplication.class, args);
     }
 }
