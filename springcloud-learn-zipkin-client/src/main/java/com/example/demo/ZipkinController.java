@@ -8,6 +8,10 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
+import org.springframework.web.util.UriComponentsBuilder;
+
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * Created by IntelliJ IDEA.
@@ -32,12 +36,69 @@ public class ZipkinController {
     @Autowired
     private RestTemplate restTemplate;
 
-    private String url="http://localhost:9412";
+    private String url = "http://localhost:9412";
 
     @RequestMapping("/service1")
     public String service1() throws Exception {
         logger.info("service1");
         String s = this.restTemplate.getForObject(url + "/service2", String.class);
         return s;
+    }
+
+    /**
+     * request service without spring-cloud-sleuth-zipkin
+     * @param a
+     * @param b
+     * @return
+     * @throws Exception
+     */
+    @RequestMapping("/service2")
+    public String service2(@RequestParam Integer a, @RequestParam Integer b) throws Exception {
+        logger.info("service2");
+        Map map = new HashMap<>();
+        map.put("a", a);
+        map.put("b", b);
+        Integer s = this.restTemplate.getForObject("http://localhost:1111/add?a=" + a + "&b=" + b, Integer.class);
+        return String.valueOf(s);
+    }
+
+    /**
+     * test RestTemplate with parameter
+     * @param a
+     * @param b
+     * @return
+     * @throws Exception
+     */
+    @RequestMapping("/service3")
+    public String service3(@RequestParam Integer a, @RequestParam Integer b) throws Exception {
+        logger.info("service3");
+
+        String url = "http://localhost:1111/{path}";
+
+        // URI (URL) parameters
+        Map<String, String> uriParams = new HashMap<>();
+        uriParams.put("path", "add");
+
+        // Query parameters
+        UriComponentsBuilder builder = UriComponentsBuilder.fromUriString(url)
+                // Add query parameter
+                .queryParam("a", a)
+                .queryParam("b", b);
+
+        /**
+         * Console output:http://localhost:1111/add?a=1&b=114
+         */
+        System.out.println(builder.buildAndExpand(uriParams).toUri());
+
+//        Integer s = restTemplate.exchange(builder.buildAndExpand(uriParams).toUri(),
+//                HttpMethod.GET, Integer.class, class_p);
+
+//        Map map = new HashMap<>();
+//        map.put("a", a);
+//        map.put("b", b);
+//        Integer s = this.restTemplate.getForObject("http://localhost:1111/add", Integer.class, map);
+
+        Integer s = this.restTemplate.getForObject(builder.buildAndExpand(uriParams).toUri(), Integer.class);
+        return String.valueOf(s);
     }
 }

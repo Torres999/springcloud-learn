@@ -6,7 +6,7 @@ import org.springframework.cloud.netflix.hystrix.dashboard.EnableHystrixDashboar
 import org.springframework.cloud.netflix.turbine.EnableTurbine;
 
 /**
- * 该工程测试用到了一下模块：
+ * 该工程测试用到了以下模块：
  * 1.springcloud-learn-consume-1
  * 2.springcloud-learn-registercenter
  * 3.springcloud-learn-service-1

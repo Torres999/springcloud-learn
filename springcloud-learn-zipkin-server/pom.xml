@@ -67,6 +67,24 @@
 		</dependency>
 		<!--============ zipkin end============-->
 
+		<!--============ zipkin mysql============-->
+		<dependency>
+			<groupId>io.zipkin.java</groupId>
+			<artifactId>zipkin-autoconfigure-storage-mysql</artifactId>
+		</dependency>
+		<!--<dependency>-->
+			<!--<groupId>org.mariadb.jdbc</groupId>-->
+			<!--<artifactId>mariadb-java-client</artifactId>-->
+		<!--</dependency>-->
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-jdbc</artifactId>
+		</dependency>
+
 
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
